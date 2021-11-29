@@ -82,4 +82,4 @@ test:
 #
 production:
   <<: *default
-  password: <%= ENV['LIBRARY_DATABASE_PASSWORD'] %>
+  url: ENV['DATABASE_URL']
