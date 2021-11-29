@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Foundations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lib</th>
+      <th>Books count</th>
+      <th>Journals count</th>
+      <th>Newspapers count</th>
+      <th>Collections count</th>
+      <th>Dissertations count</th>
+      <th>Reports count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foundations.each do |foundation| %>
+      <tr>
+        <td><%= foundation.name %></td>
+        <td><%= link_to foundation.lib.name, foundation.lib %></td>
+        <td><%= foundation.books_count %></td>
+        <td><%= foundation.journals_count %></td>
+        <td><%= foundation.newspapers_count %></td>
+        <td><%= foundation.collections_count %></td>
+        <td><%= foundation.dissertations_count %></td>
+        <td><%= foundation.reports_count %></td>
+        <td><%= link_to 'Show', foundation %></td>
+        <td><%= link_to 'Edit', edit_foundation_path(foundation) %></td>
+        <td><%= link_to 'Destroy', foundation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Foundation', new_foundation_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @foundation.name %>
+</p>
+
+<p>
+  <strong>Lib:</strong>
+  <%= link_to @foundation.lib.name, @foundation.lib %>
+</p>
+
+<p>
+  <strong>Books count:</strong>
+  <%= @foundation.books_count %>
+</p>
+
+<p>
+  <strong>Journals count:</strong>
+  <%= @foundation.journals_count %>
+</p>
+
+<p>
+  <strong>Newspapers count:</strong>
+  <%= @foundation.newspapers_count %>
+</p>
+
+<p>
+  <strong>Collections count:</strong>
+  <%= @foundation.collections_count %>
+</p>
+
+<p>
+  <strong>Dissertations count:</strong>
+  <%= @foundation.dissertations_count %>
+</p>
+
+<p>
+  <strong>Reports count:</strong>
+  <%= @foundation.reports_count %>
+</p>
+
+<%= link_to 'Edit', edit_foundation_path(@foundation) %> |
+<%= link_to 'Back', foundations_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Foundation:</strong>
+  <%= link_to @replenishment.foundation.name, @replenishment.foundation %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= link_to @replenishment.employee.full_name, employee_path(@replenishment.employee) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @replenishment.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= link_to @replenishment.type.name, type_path(@replenishment.type) %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @replenishment.publisher %>
+</p>
+
+<p>
+  <strong>Items count:</strong>
+  <%= @replenishment.items_count %>
+</p>
+
+<%= link_to 'Edit', edit_replenishment_path(@replenishment) %> |
+<%= link_to 'Back', replenishments_path %>

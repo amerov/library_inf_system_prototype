@@ -1,0 +1,59 @@
+<%= form_with(model: foundation) do |form| %>
+  <% if foundation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(foundation.errors.count, "error") %> prohibited this foundation from being saved:</h2>
+
+      <ul>
+        <% foundation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lib_id %>
+
+    <%= form.select :lib_id, options_from_collection_for_select(Lib.all, 'id', 'name') %>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :books_count %>
+    <%= form.number_field :books_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :journals_count %>
+    <%= form.number_field :journals_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :newspapers_count %>
+    <%= form.number_field :newspapers_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :collections_count %>
+    <%= form.number_field :collections_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dissertations_count %>
+    <%= form.number_field :dissertations_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reports_count %>
+    <%= form.number_field :reports_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

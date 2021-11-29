@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Replenishments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation</th>
+      <th>Employee</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Publisher</th>
+      <th>Items count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @replenishments.each do |replenishment| %>
+      <tr>
+        <td><%= link_to replenishment.foundation.name, replenishment.foundation %></td>
+        <td><%= replenishment.employee_id %></td>
+        <td><%= replenishment.name %></td>
+        <td><%= replenishment.type_id %></td>
+        <td><%= replenishment.publisher %></td>
+        <td><%= replenishment.items_count %></td>
+        <td><%= link_to 'Show', replenishment %></td>
+        <td><%= link_to 'Edit', edit_replenishment_path(replenishment) %></td>
+        <td><%= link_to 'Destroy', replenishment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Replenishment', new_replenishment_path %>
